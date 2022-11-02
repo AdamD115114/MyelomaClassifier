@@ -1,0 +1,33 @@
+package myPackage
+
+javaType Result : myPackage.Result
+
+sib getData:myPackage.getData#getMockData
+-> success
+	output: [Result]
+	
+sib ResultToString:myPackage.getData#toString
+	input: Result
+	-> success
+		result: text
+		
+sib getAttributes:myPackage.getData#getAttributes
+input: Result
+->success
+	iprn: text
+	slfc: real
+	pprot: text
+	value: real
+	result: text
+	
+	
+sib textContains: myPackage.textExt#contains
+	input: text
+	needle: text
+	-> true
+	-> false
+
+sib setResult: myPackage.getData#setOutcome
+	input0: Result
+	input1: text
+	-> success

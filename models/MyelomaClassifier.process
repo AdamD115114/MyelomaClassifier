@@ -1,0 +1,947 @@
+MiniDIMEProcess _WOwe4FncEe2b7_iAaIKQ3g {
+  modelName "MyelomaClassifier"
+  dataFlowView true
+  processType Basic
+  isStateful false
+  StartSIB _Wx9SkVncEe2b7_iAaIKQ3g at 280,60 size 100,65 {
+  	-ControlFlow-> _35iskVneEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _4rK90VneEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  EndSIB _ybWlkVneEe2b7_iAaIKQ3g at -10,292 size 100,65 {
+  	branchName "success"
+  }
+  
+  AtomicSIB _35iskVneEe2b7_iAaIKQ3g at 270,140 size 120,65 {
+  	libraryComponentUID "myPackage.sib.getData"
+  	label "getData"
+  	-BranchConnector-> _35j6sVneEe2b7_iAaIKQ3g   {
+  		id _35khwVneEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _35j6sVneEe2b7_iAaIKQ3g at 270,215 size 120,50 {
+  	name "success"
+  	JavaNativeOutputPort _35lv4VneEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		libraryComponentUID "myPackage.type.Result"
+  		isList true
+  		name "output"
+  		-JavaNativeDirectDataFlow-> _5YunYVneEe2b7_iAaIKQ3g via (260,251) (260,356) decorate "" at (0,0) {
+  			id _6HQhUVneEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _5YtZQVneEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _552XcVneEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  IterateJavaNativeSIB _5YtZQVneEe2b7_iAaIKQ3g at 270,280 size 120,90 {
+  	libraryComponentUID "myPackage.type.Result"
+  	label "Iterate Result"
+  	JavaNativeInputPort _5YunYVneEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		libraryComponentUID "myPackage.type.Result"
+  		isList true
+  		name "list"
+  	}
+  	-BranchConnector-> _5Yv1gVneEe2b7_iAaIKQ3g   {
+  		id _5YxDoVneEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  	
+  	-BranchConnector-> _5YyRwVneEe2b7_iAaIKQ3g   {
+  		id _5Yzf4VneEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _5Yv1gVneEe2b7_iAaIKQ3g at 270,380 size 120,50 {
+  	name "next"
+  	JavaNativeOutputPort _5YxDo1neEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		libraryComponentUID "myPackage.type.Result"
+  		isList false
+  		name "element"
+  		-JavaNativeUpdate-> _z8GX4FnkEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  			id _1bNaMVnkEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  		
+  		-JavaNativeDirectDataFlow-> _o62MwVnrEe2b7_iAaIKQ3g via (260,416) (260,441) (1080,440) decorate "" at (0,0) {
+  			id _tEAagVnrEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _p5QvEVnmEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _vcuXoVnmEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _5YyRwVneEe2b7_iAaIKQ3g at 120,312 size 120,25 {
+  	name "exit"
+  	-ControlFlow-> _ybWlkVneEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _7Y8ysVneEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  DataContext _ticuMVnkEe2b7_iAaIKQ3g at 50,369 size 180,85 {
+  	dfViewWorkaround true
+  	JavaNativeVariable _z8GX4FnkEe2b7_iAaIKQ3g at 20,30 size 140,25 {
+  		libraryComponentUID "myPackage.type.Result"
+  		name "variable"
+  		dfViewWorkaround true
+  		isList false
+  		-JavaNativeRead-> _7ENqEVnkEe2b7_iAaIKQ3g via (140,685) decorate "" at (0,0) {
+  			id _9QCBYFnkEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  		
+  		-JavaNativeRead-> _s482gVnqEe2b7_iAaIKQ3g via (50,411) (50,1966) decorate "" at (0,0) {
+  			id _14iAoVnqEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  }
+  
+  AtomicSIB _7EL04VnkEe2b7_iAaIKQ3g at 270,610 size 120,90 {
+  	libraryComponentUID "myPackage.sib.getAttributes"
+  	label "getAttributes"
+  	JavaNativeInputPort _7ENqEVnkEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		libraryComponentUID "myPackage.type.Result"
+  		isList false
+  		name "input"
+  	}
+  	-BranchConnector-> _7EQGUVnkEe2b7_iAaIKQ3g   {
+  		id _7EQtYVnkEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _7EQGUVnkEe2b7_iAaIKQ3g at 270,710 size 120,122 {
+  	name "success"
+  	PrimitiveOutputPort _7ESikVnkEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "iprn"
+  	}
+  	
+  	PrimitiveOutputPort _7EU-0VnkEe2b7_iAaIKQ3g at 5,45 size 110,18 {
+  		dataType Real
+  		isList false
+  		name "slfc"
+  		-PrimitiveDirectDataFlow-> _AyhT4VnpEe2b7_iAaIKQ3g via (260,764) (260,1186) decorate "" at (0,0) {
+  			id _BXxWAVnpEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  		
+  		-PrimitiveDirectDataFlow-> _A9Dv8VnpEe2b7_iAaIKQ3g via (260,764) (260,1186) decorate "" at (0,0) {
+  			id _Brh_gVnpEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  		
+  		-PrimitiveDirectDataFlow-> _NxgS0VnpEe2b7_iAaIKQ3g via (260,764) (260,1529) decorate "" at (0,0) {
+  			id _foyLgVnrEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	
+  	PrimitiveOutputPort _7EYCIVnkEe2b7_iAaIKQ3g at 5,63 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "pprot"
+  		-PrimitiveDirectDataFlow-> _w9mJ8VnlEe2b7_iAaIKQ3g via (260,782) (260,811) decorate "" at (0,0) {
+  			id _IxljkVnmEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  		
+  		-PrimitiveDirectDataFlow-> _zwMNYVnlEe2b7_iAaIKQ3g via (260,782) (260,811) decorate "" at (0,0) {
+  			id _JFFHUVnmEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	
+  	PrimitiveOutputPort _7EbsgVnkEe2b7_iAaIKQ3g at 5,81 size 110,18 {
+  		dataType Real
+  		isList false
+  		name "value"
+  		-PrimitiveDirectDataFlow-> _DFHI8VnmEe2b7_iAaIKQ3g via (260,800) (260,922) decorate "" at (0,0) {
+  			id _b6eGsVnrEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  		
+  		-PrimitiveDirectDataFlow-> _0tjGIVnoEe2b7_iAaIKQ3g via (260,800) (260,1186) decorate "" at (0,0) {
+  			id _deoBEVnrEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	
+  	PrimitiveOutputPort _7Eev0VnkEe2b7_iAaIKQ3g at 5,99 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "result"
+  	}
+  	-ControlFlow-> _w9hRcVnlEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _zXeLYVnlEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _w9hRcVnlEe2b7_iAaIKQ3g at 420,717 size 120,108 {
+  	libraryComponentUID "myPackage.sib.textContains"
+  	name ""
+  	label "textContains"
+  	TextInputStatic _2OhRAVnlEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		value "IgG"
+  		name "input"
+  	}
+  	
+  	PrimitiveInputPort _w9mJ8VnlEe2b7_iAaIKQ3g at 5,85 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "needle"
+  	}
+  	-BranchConnector-> _w9omMVnlEe2b7_iAaIKQ3g   {
+  		id _w9pNQVnlEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  	
+  	-BranchConnector-> _w9rCcVnlEe2b7_iAaIKQ3g   {
+  		id _w9rCc1nlEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _w9omMVnlEe2b7_iAaIKQ3g at 420,887 size 120,25 {
+  	name "true"
+  	-ControlFlow-> _A1s1oVnnEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _DvCaQVnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _w9rCcVnlEe2b7_iAaIKQ3g at 689,758 size 120,25 {
+  	name "false"
+  	-ControlFlow-> _zwGt0VnlEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _0N6EIVnlEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _zwGt0VnlEe2b7_iAaIKQ3g at 980,717 size 120,108 {
+  	libraryComponentUID "myPackage.sib.textContains"
+  	label "textContains"
+  	TextInputStatic _3f9DsVnlEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		value "IgA"
+  		name "input"
+  	}
+  	
+  	PrimitiveInputPort _zwMNYVnlEe2b7_iAaIKQ3g at 5,85 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "needle"
+  	}
+  	-BranchConnector-> _zwP3wVnlEe2b7_iAaIKQ3g   {
+  		id _zwQe0VnlEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  	
+  	-BranchConnector-> _zwSUAVnlEe2b7_iAaIKQ3g   {
+  		id _zwS7EVnlEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _zwP3wVnlEe2b7_iAaIKQ3g at 980,887 size 120,25 {
+  	name "true"
+  	-ControlFlow-> _DFFTwVnmEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _ZTfkwVnoEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _zwSUAVnlEe2b7_iAaIKQ3g at 1140,758 size 120,25 {
+  	name "false"
+  	-ControlFlow-> _DFFTwVnmEe2b7_iAaIKQ3g via (1200,836) (876,836) decorate "" at (0,0) {
+  		id _EQyR4VnmEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _DFFTwVnmEe2b7_iAaIKQ3g at 820,846 size 120,108 {
+  	libraryComponentUID "common.realSib.sib.GreaterOrEqual"
+  	label "GreaterOrEqual"
+  	PrimitiveInputPort _DFHI8VnmEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Real
+  		isList false
+  		name "input1"
+  	}
+  	
+  	RealInputStatic _TOSzAFnmEe2b7_iAaIKQ3g at 5,85 size 110,18 {
+  		value 15.0
+  		name "input2"
+  	}
+  	-BranchConnector-> _DFOdsVnmEe2b7_iAaIKQ3g   {
+  		id _DFPEwVnmEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _DFOdsVnmEe2b7_iAaIKQ3g at 820,964 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _DFRhAVnmEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "result"
+  		-PrimitiveDirectDataFlow-> _PhXOQVnmEe2b7_iAaIKQ3g via (810,1000) (810,1103) decorate "" at (0,0) {
+  			id _RQUqcVnmEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _PhUK8VnmEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _RAmMYVnmEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _PhUK8VnmEe2b7_iAaIKQ3g at 820,1027 size 120,90 {
+  	libraryComponentUID "common.booleanSib.sib.If"
+  	label "If"
+  	PrimitiveInputPort _PhXOQVnmEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "input"
+  	}
+  	-BranchConnector-> _PhbfsVnmEe2b7_iAaIKQ3g   {
+  		id _PhcGwVnmEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  	
+  	-BranchConnector-> _PhejAVnmEe2b7_iAaIKQ3g   {
+  		id _PhejA1nmEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _PhbfsVnmEe2b7_iAaIKQ3g at 1040,1059 size 120,25 {
+  	name "true"
+  	-ControlFlow-> _0tfbwVnoEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _vGYz4VnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _PhejAVnmEe2b7_iAaIKQ3g at 570,1059 size 120,25 {
+  	name "false"
+  	-ControlFlow-> _egkjEVnnEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _joNLQVnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  DataContext _hJEr0VnmEe2b7_iAaIKQ3g at 40,840 size 180,85 {
+  	dfViewWorkaround true
+  	PrimitiveVariable _kJGHQVnmEe2b7_iAaIKQ3g at 20,30 size 140,25 {
+  		dataType Boolean
+  		name "IgG"
+  		dfViewWorkaround true
+  		isList false
+  		-PrimitiveRead-> _BClloVnoEe2b7_iAaIKQ3g via (60,882) (60,1636) decorate "" at (0,0) {
+  			id _PrM00FnoEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  }
+  
+  PutToContextSIB _p5QvEVnmEe2b7_iAaIKQ3g at 270,440 size 120,90 {
+  	label "reset Flags"
+  	BooleanInputStatic _CMFZwFnnEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		value false
+  		name "reset"
+  	}
+  	-BranchConnector-> _p5TyYVnmEe2b7_iAaIKQ3g   {
+  		id _p5VnkVnmEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _p5TyYVnmEe2b7_iAaIKQ3g at 270,537 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _r3MbYVnmEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "reset"
+  		-PrimitiveUpdate-> _kJGHQVnmEe2b7_iAaIKQ3g via (238,573) (237,882) decorate "" at (0,0) {
+  			id _ybE_IFnmEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _7EL04VnkEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _yFAogVnmEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  PutToContextSIB _A1s1oVnnEe2b7_iAaIKQ3g at 560,855 size 120,90 {
+  	label "PutToContext"
+  	BooleanInputStatic _CiYZ4VnnEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		value true
+  		name "IgGFlag"
+  	}
+  	-BranchConnector-> _A1v48VnnEe2b7_iAaIKQ3g   {
+  		id _A1xuIVnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _A1v48VnnEe2b7_iAaIKQ3g at 689,875 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _O38oYVnnEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "IgGFlag"
+  		-PrimitiveUpdate-> _kJGHQVnmEe2b7_iAaIKQ3g via (749,950) (130,950) decorate "" at (0,0) {
+  			id _QkBIoVnnEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _DFFTwVnmEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _I2Z8sVnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _coQ9oVnnEe2b7_iAaIKQ3g at 389,1110 size 120,108 {
+  	libraryComponentUID "common.realSib.sib.GreaterOrEqual"
+  	label "GreaterOrEqual"
+  	PrimitiveInputPort _AyhT4VnpEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Real
+  		isList false
+  		name "input1"
+  	}
+  	
+  	RealInputStatic __5cW1lnoEe2b7_iAaIKQ3g at 5,85 size 110,18 {
+  		value 1.65
+  		name "input2"
+  	}
+  	-BranchConnector-> _cofAEVnnEe2b7_iAaIKQ3g   {
+  		id _cofnIVnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _cofAEVnnEe2b7_iAaIKQ3g at 389,1228 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _cojRgVnnEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "result"
+  		-PrimitiveDirectDataFlow-> _sCLt8VnnEe2b7_iAaIKQ3g via (379,1264) (379,1376) decorate "" at (0,0) {
+  			id _taSwYVnnEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _sCIDkVnnEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _s0FE8VnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _egkjEVnnEe2b7_iAaIKQ3g at 570,1110 size 120,108 {
+  	libraryComponentUID "common.realSib.sib.LessOrEqual"
+  	label "LessOrEqual"
+  	PrimitiveInputPort _A9Dv8VnpEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Real
+  		isList false
+  		name "input1"
+  	}
+  	
+  	RealInputStatic __R_VQVnoEe2b7_iAaIKQ3g at 5,85 size 110,18 {
+  		value 0.26
+  		name "input2"
+  	}
+  	-BranchConnector-> _egzzoVnnEe2b7_iAaIKQ3g   {
+  		id _egzzo1nnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _egzzoVnnEe2b7_iAaIKQ3g at 570,1228 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _eg4FEFnnEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "result"
+  		-PrimitiveDirectDataFlow-> _mTY_IVnnEe2b7_iAaIKQ3g via (560,1264) (560,1376) decorate "" at (0,0) {
+  			id _tHizgVnnEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _mTV70VnnEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _oAD8UVnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _mTV70VnnEe2b7_iAaIKQ3g at 570,1300 size 120,90 {
+  	libraryComponentUID "common.booleanSib.sib.If"
+  	label "If"
+  	PrimitiveInputPort _mTY_IVnnEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "input"
+  	}
+  	-BranchConnector-> _mTfs0VnnEe2b7_iAaIKQ3g   {
+  		id _mTgT4VnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  	
+  	-BranchConnector-> _mTj-QVnnEe2b7_iAaIKQ3g via (629,1433)  {
+  		id _mTklUVnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _mTfs0VnnEe2b7_iAaIKQ3g at 769,1332 size 120,25 {
+  	name "true"
+  	-ControlFlow-> _0tfbwVnoEe2b7_iAaIKQ3g via (964,1344) (965,1164) decorate "" at (0,0) {
+  		id _vWo2YVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _mTj-QVnnEe2b7_iAaIKQ3g at 480,1420 size 120,25 {
+  	name "false"
+  	-ControlFlow-> _coQ9oVnnEe2b7_iAaIKQ3g via (540,1074) (449,1074) decorate "" at (0,0) {
+  		id _pjOYMFnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _sCIDkVnnEe2b7_iAaIKQ3g at 389,1300 size 120,90 {
+  	libraryComponentUID "common.booleanSib.sib.If"
+  	label "If"
+  	PrimitiveInputPort _sCLt8VnnEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "input"
+  	}
+  	-BranchConnector-> _sCSboFnnEe2b7_iAaIKQ3g via (447,1479)  {
+  		id _sCSbolnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  	
+  	-BranchConnector-> _sCWtEVnnEe2b7_iAaIKQ3g   {
+  		id _sCXUIVnnEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _sCSboFnnEe2b7_iAaIKQ3g at 769,1466 size 120,25 {
+  	name "true"
+  	-ControlFlow-> _0tfbwVnoEe2b7_iAaIKQ3g via (990,1478) (990,1164) decorate "" at (0,0) {
+  		id _vqF94VnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _sCWtEVnnEe2b7_iAaIKQ3g at 389,1510 size 120,25 {
+  	name "false"
+  	-ControlFlow-> _BCh7QVnoEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _CdcaEVnoEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _BCh7QVnoEe2b7_iAaIKQ3g at 389,1560 size 120,90 {
+  	libraryComponentUID "common.booleanSib.sib.If"
+  	label "If"
+  	PrimitiveInputPort _BClloVnoEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "input"
+  	}
+  	-BranchConnector-> _BCs6YVnoEe2b7_iAaIKQ3g   {
+  		id _BCthcVnoEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  	
+  	-BranchConnector-> _BCyZ8VnoEe2b7_iAaIKQ3g   {
+  		id _BCyZ81noEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _BCs6YVnoEe2b7_iAaIKQ3g at 250,1660 size 120,25 {
+  	name "true"
+  	-ControlFlow-> _iPM7gVnoEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _npWQAVnoEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _BCyZ8VnoEe2b7_iAaIKQ3g at 508,1660 size 120,25 {
+  	name "false"
+  	-ControlFlow-> _ifQJsFnoEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _kbEWIVnoEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  PutToContextSIB _iPM7gVnoEe2b7_iAaIKQ3g at 250,1710 size 120,90 {
+  	label "PutToContext"
+  	TextInputStatic _ovicAVnoEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		value "IgG Monitor annually via GP"
+  		name "input2"
+  	}
+  	-BranchConnector-> _iPQl4VnoEe2b7_iAaIKQ3g   {
+  		id _iPTCIVnoEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _iPQl4VnoEe2b7_iAaIKQ3g at 250,1820 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _jicsEVnoEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "input2"
+  		-PrimitiveUpdate-> _qS9rsVnqEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  			id _t7UScVnqEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _s43W8VnqEe2b7_iAaIKQ3g via (309,1941) decorate "" at (0,0) {
+  		id _zpGUoVnqEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  PutToContextSIB _ifQJsFnoEe2b7_iAaIKQ3g at 508,1710 size 120,90 {
+  	label "PutToContext"
+  	TextInputStatic _tE4roVnoEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		value "IgA Monitor 6 months via GP"
+  		name "input2"
+  	}
+  	-BranchConnector-> _ifT0EVnoEe2b7_iAaIKQ3g   {
+  		id _ifW3YVnoEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _ifT0EVnoEe2b7_iAaIKQ3g at 508,1820 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _jpFfkVnoEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "input2"
+  		-PrimitiveUpdate-> _qS9rsVnqEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  			id _ujNY4VnqEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _s43W8VnqEe2b7_iAaIKQ3g via (565,1941) decorate "" at (0,0) {
+  		id _zZYdoVnqEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _0tfbwVnoEe2b7_iAaIKQ3g at 1040,1110 size 120,108 {
+  	libraryComponentUID "common.realSib.sib.GreaterOrEqual"
+  	label "GreaterOrEqual"
+  	PrimitiveInputPort _0tjGIVnoEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Real
+  		isList false
+  		name "input1"
+  	}
+  	
+  	RealInputStatic _1s5DRlnoEe2b7_iAaIKQ3g at 5,85 size 110,18 {
+  		value 30.0
+  		name "input2"
+  	}
+  	-BranchConnector-> _0tyWsVnoEe2b7_iAaIKQ3g   {
+  		id _0ty9wVnoEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _0tyWsVnoEe2b7_iAaIKQ3g at 1040,1228 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _0t3PMVnoEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "result"
+  		-PrimitiveDirectDataFlow-> _G8neoVnpEe2b7_iAaIKQ3g via (1030,1264) (1030,1369) decorate "" at (0,0) {
+  			id _kC-w0VnpEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _G8jNMVnpEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _HvshYVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _G8jNMVnpEe2b7_iAaIKQ3g at 1040,1293 size 120,90 {
+  	libraryComponentUID "common.booleanSib.sib.If"
+  	label "If"
+  	PrimitiveInputPort _G8neoVnpEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "input"
+  	}
+  	-BranchConnector-> _G8vacVnpEe2b7_iAaIKQ3g via (1268,1336)  {
+  		id _G8wBgVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  	
+  	-BranchConnector-> _G806AVnpEe2b7_iAaIKQ3g   {
+  		id _G81hEVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _G8vacVnpEe2b7_iAaIKQ3g at 1210,1633 size 120,25 {
+  	name "true"
+  	-ControlFlow-> _9CC2cVnpEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _ArGn0VnqEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _G806AVnpEe2b7_iAaIKQ3g at 1040,1409 size 120,25 {
+  	name "false"
+  	-ControlFlow-> _NxcBYVnpEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _P7zAIVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _NxcBYVnpEe2b7_iAaIKQ3g at 1040,1453 size 120,108 {
+  	libraryComponentUID "common.realSib.sib.GreaterOrEqual"
+  	label "GreaterOrEqual"
+  	PrimitiveInputPort _NxgS0VnpEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Real
+  		isList false
+  		name "input1"
+  	}
+  	
+  	RealInputStatic _OG7JNlnpEe2b7_iAaIKQ3g at 5,85 size 110,18 {
+  		value 100.0
+  		name "input2"
+  	}
+  	-BranchConnector-> _NxwxgVnpEe2b7_iAaIKQ3g   {
+  		id _NxxYkVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _NxwxgVnpEe2b7_iAaIKQ3g at 1040,1571 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _Nx2REVnpEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "result"
+  		-PrimitiveDirectDataFlow-> _hl0K0VnpEe2b7_iAaIKQ3g via (1030,1607) (1030,1709) decorate "" at (0,0) {
+  			id _jonwEVnpEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _hlvSUVnpEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _jW68EVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _hlvSUVnpEe2b7_iAaIKQ3g at 1040,1633 size 120,90 {
+  	libraryComponentUID "common.booleanSib.sib.If"
+  	label "If"
+  	PrimitiveInputPort _hl0K0VnpEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Boolean
+  		isList false
+  		name "input"
+  	}
+  	-BranchConnector-> _hl8tsVnpEe2b7_iAaIKQ3g   {
+  		id _hl9UwVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  	
+  	-BranchConnector-> _hmC0UVnpEe2b7_iAaIKQ3g   {
+  		id _hmDbYVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _hl8tsVnpEe2b7_iAaIKQ3g at 1210,1665 size 120,25 {
+  	name "true"
+  	-ControlFlow-> _9CC2cVnpEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _A4IXMVnqEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _hmC0UVnpEe2b7_iAaIKQ3g at 861,1665 size 120,25 {
+  	name "false"
+  	-ControlFlow-> _6mrnQVnpEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _8fVK8VnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  PutToContextSIB _6mrnQVnpEe2b7_iAaIKQ3g at 861,1710 size 120,90 {
+  	label "PutToContext"
+  	TextInputStatic _COshgVnqEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		value "Refer To Haematology"
+  		name "input2"
+  	}
+  	-BranchConnector-> _6mv4sVnpEe2b7_iAaIKQ3g   {
+  		id _6mzjEVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _6mv4sVnpEe2b7_iAaIKQ3g at 861,1820 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _6wit4VnpEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "input2"
+  		-PrimitiveUpdate-> _qS9rsVnqEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  			id _u9dE4VnqEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _s43W8VnqEe2b7_iAaIKQ3g via (920,1944) decorate "" at (0,0) {
+  		id _z432AVnqEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  PutToContextSIB _9CC2cVnpEe2b7_iAaIKQ3g at 1210,1710 size 120,90 {
+  	label "PutToContext"
+  	TextInputStatic _Hncu4FnqEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		value "Urgent Haematology Referral"
+  		name "input2"
+  	}
+  	-BranchConnector-> _9CHH4VnpEe2b7_iAaIKQ3g   {
+  		id _9CKyQVnpEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _9CHH4VnpEe2b7_iAaIKQ3g at 1210,1820 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _9G46MVnpEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "input2"
+  		-PrimitiveUpdate-> _qS9rsVnqEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  			id _vQIwUFnqEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _s43W8VnqEe2b7_iAaIKQ3g via (1268,1944) decorate "" at (0,0) {
+  		id _0J9mAVnqEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  DataContext _nyTs0VnqEe2b7_iAaIKQ3g at 659,1818 size 180,53 {
+  	dfViewWorkaround true
+  	PrimitiveVariable _qS9rsVnqEe2b7_iAaIKQ3g at 21,23 size 140,25 {
+  		dataType Text
+  		name "outcome"
+  		dfViewWorkaround true
+  		isList false
+  		-PrimitiveRead-> _s5C9IVnqEe2b7_iAaIKQ3g via (670,1853) (670,1984) decorate "" at (0,0) {
+  			id _0xk_oVnqEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  }
+  
+  AtomicSIB _s43W8VnqEe2b7_iAaIKQ3g at 689,1890 size 120,108 {
+  	libraryComponentUID "myPackage.sib.setResult"
+  	label "setResult"
+  	JavaNativeInputPort _s482gVnqEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		libraryComponentUID "myPackage.type.Result"
+  		isList false
+  		name "input0"
+  	}
+  	
+  	PrimitiveInputPort _s5C9IVnqEe2b7_iAaIKQ3g at 5,85 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "input1"
+  	}
+  	-BranchConnector-> _s5MHEVnqEe2b7_iAaIKQ3g   {
+  		id _s5MuIVnqEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _s5MHEVnqEe2b7_iAaIKQ3g at 689,2008 size 120,25 {
+  	name "success"
+  	-ControlFlow-> _o6x7UVnrEe2b7_iAaIKQ3g via (1350,2020) (1350,325) decorate "" at (0,0) {
+  		id _vXCNEVnrEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _o6x7UVnrEe2b7_iAaIKQ3g at 1021,280 size 120,90 {
+  	libraryComponentUID "myPackage.sib.ResultToString"
+  	label "ResultToString"
+  	JavaNativeInputPort _o62MwVnrEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		libraryComponentUID "myPackage.type.Result"
+  		isList false
+  		name "input"
+  	}
+  	-BranchConnector-> _o686cVnrEe2b7_iAaIKQ3g   {
+  		id _o69hgVnrEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _o686cVnrEe2b7_iAaIKQ3g at 742,300 size 120,50 {
+  	name "success"
+  	PrimitiveOutputPort _o7DoIVnrEe2b7_iAaIKQ3g at 5,27 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "result"
+  		-PrimitiveDirectDataFlow-> _pi9VoVnrEe2b7_iAaIKQ3g via (589,336) (589,356) decorate "" at (0,0) {
+  			id _rm0q0VnrEe2b7_iAaIKQ3g
+  			dfViewWorkaround true
+  		}
+  	}
+  	-ControlFlow-> _pi4dIVnrEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _rXLsUVnrEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  AtomicSIB _pi4dIVnrEe2b7_iAaIKQ3g at 599,280 size 120,90 {
+  	libraryComponentUID "common.textSib.sib.Print"
+  	label "Print"
+  	PrimitiveInputPort _pi9VoVnrEe2b7_iAaIKQ3g at 5,67 size 110,18 {
+  		dataType Text
+  		isList false
+  		name "input"
+  	}
+  	-BranchConnector-> _pjHGoVnrEe2b7_iAaIKQ3g   {
+  		id _pjHtsVnrEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+  
+  Branch _pjHGoVnrEe2b7_iAaIKQ3g at 430,312 size 120,25 {
+  	name "success"
+  	-ControlFlow-> _5YtZQVneEe2b7_iAaIKQ3g  decorate "" at (0,0) {
+  		id _xdVyQVnrEe2b7_iAaIKQ3g
+  		concurrent true
+  	}
+  }
+}
